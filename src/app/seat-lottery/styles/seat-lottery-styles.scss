@@ -1,0 +1,297 @@
+#lotteryContainer {
+    position: relative;
+}
+#lotteryBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url(/images/bg.png);
+    background-size: 154px 119px;
+    opacity: 0.6;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #e9e9e9;
+        opacity: 0.3;
+    }
+}
+
+.container-fluid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+}
+
+input[type="text"] {
+    text-align: center;
+}
+
+.button-for-lottery:hover {
+    opacity: 0.8;
+}
+
+.lottery-text {
+    font-size: 2em;
+}
+
+// 抽選の設定
+.input-container {
+    margin: auto;
+    width: 100px;
+    height: 80px;
+
+    &--text {
+        margin: auto;
+        font-size: 3em;
+        line-height: 80px;
+    }
+
+    &__input-num {
+        width: 100%;
+        height: 80px;
+        border-radius: 0.2em;
+        font-size: 3em;
+    }
+
+    &--remove {
+        width: 80px;
+        height: 60px;
+
+        &__remove-number {
+            width: 100%;
+            height: 100%;
+            border-radius: 0.2em;
+            font-size: 2em;
+        }
+    }
+}
+
+.lottery-times-text-container {
+    height: 80px;
+    min-width: 130px;
+    display: flex;
+
+    & .lottery-text {
+        margin: auto;
+    }
+}
+
+.setting-lottery-button-container {
+    width: 100%;
+    display: flex;
+
+    &__set-button {
+        margin: auto;
+        display: flex;
+        width: 250px;
+        height: 80px;
+        background: #ddd;
+        border-radius: 0.3em;
+        cursor: pointer;
+        box-shadow: 0 0.4rem 0 rgb(158, 158, 158);
+
+        p {
+            margin: auto;
+            font-size: 3em;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        &.clicked {
+            box-shadow: 0 0.2rem 0 rgb(158, 158, 158);
+            margin-top: 0.2rem;
+            margin-bottom: -0.2rem;
+        }
+    }
+}
+
+// 抽選の結果
+.lottery-result-container {
+    height: 100vh;
+    border-left: 1px dashed #bbb;
+    border-right: 1px dashed #bbb;
+}
+.result-display-container {
+    display: flex;
+    width: 100%;
+    height: 370px;
+
+    &__result-display {
+        position: relative;
+        margin: auto;
+        width: 600px;
+        height: 350px;
+
+        &__text {
+            position: absolute;
+            top: 8%;
+            left: 6%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2em;
+        }
+
+        &__input-text {
+            width: 600px;
+            height: 350px;
+            border-radius: 0.05em;
+            font-size: 15em;
+        }
+    }
+}
+
+.lottery-button-container {
+    display: flex;
+    height: 220px;
+
+    &__lottery-button {
+        margin: 0 auto;
+        display: flex;
+        width: 200px;
+        height: 200px;
+        background: #ef454a;
+        border-radius: 50%;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 0 0.5rem 0 #d1483e;
+
+        &__text {
+            margin: auto;
+            color: #fff;
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        &.clicked {
+            box-shadow: 0 0.2rem 0 #d1483e;
+            margin-top: 0.3rem;
+            margin-bottom: -0.3rem;
+        }
+    }
+}
+
+.lock-button-container {
+    display: flex;
+    height: 120px;
+
+    &__lock-button {
+        margin: 0 auto;
+        display: flex;
+        width: 400px;
+        height: 100px;
+        background: #ddd;
+        border-radius: 0.2em;
+        cursor: pointer;
+        box-shadow: 0 0.2rem 0 rgb(158, 158, 158);
+
+        &__text {
+            margin: auto;
+            font-size: 3em;
+            opacity: 0.2;
+        }
+
+        &.clicked {
+            box-shadow: 0 0.5rem 0 rgb(158, 158, 158);
+            margin-top: -0.3rem;
+            margin-bottom: 0.3rem;
+
+            p {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+// 抽選のオプション
+.all-lottery-button-container {
+    height: 70px;
+
+    &__button {
+        width: 200px;
+        height: 60px;
+        background: #00bfff;
+        border-radius: 0.3em;
+        text-align: center;
+        color: #fff;
+        line-height: 60px;
+        font-size: 2em;
+        cursor: pointer;
+        box-shadow: 0 0.4rem 0 #008fff;
+        display: block;
+        opacity: 0.7;
+
+        &.clicked {
+            box-shadow: 0 0.2rem 0 #008fff;
+            margin-top: 0.2rem;
+            margin-bottom: -0.2rem;
+            opacity: 0.7;
+        }
+    }
+}
+
+.result-display-speed-container {
+    margin-bottom: 8%;
+    & input[type="range"] {
+        margin-top: 20px;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: rgb(0, 143, 255, 0.8);
+        height: 5px;
+        width: 300px;
+
+        &:focus,
+        &:active {
+            outline: none;
+        }
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            cursor: pointer;
+            border: 1px solid rgba(4, 72, 124, 0.5);
+            width: 18px;
+            height: 30px;
+            background-color: rgb(0, 143, 255);
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+        }
+
+        &:active::-webkit-slider-thumb {
+            box-shadow: 0 0 0 3px rgba(0, 143, 255, 0.6);
+        }
+    }
+}
+
+.output-result-button-container {
+    display: flex;
+
+    &__text {
+        min-width: 160px;
+    }
+
+    &__button {
+        display: flex;
+        min-width: 200px;
+        height: 50px;
+        text-align: center;
+        border: 0;
+        border-radius: 0.3em;
+        box-shadow: none;
+        background-color: #00c2bc;
+        cursor: pointer;
+
+        &__text {
+            margin: auto;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #fff;
+        }
+    }
+}

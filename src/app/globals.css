@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700;800&display=swap');
+
+
+
+
+body,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+p,
+input,
+div {
+    font-family: "Kaisei Tokumin", "Courier New", -apple-system, BlinkMacSystemFont, "Yu Gothic", YuGothic, Verdana, Meiryo, sans-serif;
+}
+
+a {
+    text-decoration: none !important;
+}
