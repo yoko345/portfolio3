@@ -10,7 +10,10 @@ export const resultDisplaySpeedSlice = createSlice({
     initialState,
     reducers: {
         setSpeed: (state, { payload }) => {
-            state.speed = parseInt(payload);
+            const { speedValue, settingIsClick } = payload;
+            if (!settingIsClick) {
+                state.speed = parseInt(speedValue);
+            }
         },
     },
 });

@@ -7,7 +7,8 @@ import { setAlertTextList } from "../../features/methods/checkSetting";
 import { prepareLottery } from "../../features/methods/prepareLottery";
 
 export default function SettingButton() {
-    const settingIsClick = useAppSelector((state) => state.clickChecker.settingIsClick);
+    const settingIsClick = useAppSelector((state) => state.clickChecker.settingClickObj.isClick);
+    const settingButtonText = useAppSelector((state) => state.clickChecker.settingClickObj.text);
     const settingClickFirstTime = useAppSelector((state) => state.clickChecker.settingClickFirstTime);
     const lotteryRangeNumberObj = useAppSelector((state) => state.numberForlottery.lotteryRangeNumberObj);
     const lotteryTimes = useAppSelector((state) => state.numberForlottery.lotteryTimes);
@@ -40,7 +41,7 @@ export default function SettingButton() {
                 onMouseDown={() => (settingIsClick ? "" : dispatch(settingClick()))}
                 onMouseUp={clickSettingButton}
             >
-                <p>設定</p>
+                <p>{settingButtonText}</p>
             </div>
         </div>
     );

@@ -2,12 +2,15 @@ import { createSlice } from "@reduxjs/toolkit";
 import { ButtonClickState } from "../models/lottery.models";
 
 const initialState: ButtonClickState = {
-    settingIsClick: false,
+    settingClickObj: {
+        isClick: false,
+        text: "設定",
+    },
     settingClickFirstTime: true,
     resetIsClick: false,
     lotteryIsClick: false,
     lockClickObj: {
-        isClick: false,
+        isClick: true,
         text: "アンロック",
     },
     allLotteryIsClick: false,
@@ -18,7 +21,8 @@ export const clickCheckerSlice = createSlice({
     initialState,
     reducers: {
         settingClick: (state) => {
-            state.settingIsClick = !state.settingIsClick;
+            state.settingClickObj.isClick = !state.settingClickObj.isClick;
+            state.settingClickObj.text = state.settingClickObj.isClick ? "設定中" : "設定";
         },
         switchSettingClickFirstTime: (state) => {
             state.settingClickFirstTime = !state.settingClickFirstTime;
@@ -30,12 +34,8 @@ export const clickCheckerSlice = createSlice({
             state.lotteryIsClick = !state.lotteryIsClick;
         },
         lockClick: (state) => {
-            if (state.lockClickObj.isClick) {
-                state.lockClickObj.text = "アンロック";
-            } else {
-                state.lockClickObj.text = "ロック解除";
-            }
             state.lockClickObj.isClick = !state.lockClickObj.isClick;
+            state.lockClickObj.text = state.lockClickObj.isClick ? "ロック解除" : "アンロック";
         },
         allLotteryClick: (state) => {
             state.allLotteryIsClick = !state.allLotteryIsClick;

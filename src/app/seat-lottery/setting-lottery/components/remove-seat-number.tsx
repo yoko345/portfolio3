@@ -23,7 +23,7 @@ export default function RemoveSeatNumber() {
                     >
                         <input
                             type="number"
-                            className="input-container--remove__remove-number"
+                            className={`input-container--remove__remove-number ${boolReadOnly ? "disabled-input" : ""}`}
                             name={removeNumKey}
                             value={removeSeatNumberObj[removeNumKey]}
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => dispatch(setRemoveSeatNumberObj({ name: e.target.name, value: e.target.value }))}

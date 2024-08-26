@@ -21,7 +21,7 @@ export default function LotteryRange() {
                         <input
                             type="number"
                             min="1"
-                            className="input-container__input-num"
+                            className={`input-container__input-num ${boolReadOnly ? "disabled-input" : ""}`}
                             name="first"
                             value={firstLotteryNumber}
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => dispatch(setLotteryRangeNumber({ name: e.target.name, value: e.target.value }))}
@@ -37,7 +37,7 @@ export default function LotteryRange() {
                         <input
                             type="number"
                             min="1"
-                            className="input-container__input-num"
+                            className={`input-container__input-num ${boolReadOnly ? "disabled-input" : ""}`}
                             name="last"
                             value={lastLotteryNumber}
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => dispatch(setLotteryRangeNumber({ name: e.target.name, value: e.target.value }))}

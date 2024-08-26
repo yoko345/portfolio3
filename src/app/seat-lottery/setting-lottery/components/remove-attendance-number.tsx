@@ -23,7 +23,7 @@ export default function RemoveAttendanceNumber() {
                     >
                         <input
                             type="number"
-                            className="input-container--remove__remove-number"
+                            className={`input-container--remove__remove-number ${boolReadOnly ? "disabled-input" : ""}`}
                             name={removeNumKey}
                             value={removeAttendanceNumberObj[removeNumKey]}
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => dispatch(setRemoveAttendanceNumberObj({ name: e.target.name, value: e.target.value }))}

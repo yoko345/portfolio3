@@ -1,3 +1,11 @@
+@mixin disabled-style {
+    background-color: #dcdcdc;
+    color: #555;
+    border: 0.05em solid #555;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
 #lotteryContainer {
     position: relative;
 }
@@ -59,6 +67,10 @@ input[type="text"] {
         height: 80px;
         border-radius: 0.2em;
         font-size: 3em;
+
+        &.disabled-input {
+            @include disabled-style;
+        }
     }
 
     &--remove {
@@ -70,6 +82,10 @@ input[type="text"] {
             height: 100%;
             border-radius: 0.2em;
             font-size: 2em;
+
+            &.disabled-input {
+                @include disabled-style;
+            }
         }
     }
 }
@@ -183,27 +199,24 @@ input[type="text"] {
 
     &__lock-button {
         margin: 0 auto;
-        display: flex;
         width: 400px;
         height: 100px;
         background: #ddd;
+        border: none;
         border-radius: 0.2em;
-        cursor: pointer;
-        box-shadow: 0 0.2rem 0 rgb(158, 158, 158);
+        box-shadow: 0 0.5rem 0 #9e9e9e;
 
         &__text {
-            margin: auto;
             font-size: 3em;
-            opacity: 0.2;
+            opacity: 1;
         }
 
         &.clicked {
-            box-shadow: 0 0.5rem 0 rgb(158, 158, 158);
-            margin-top: -0.3rem;
-            margin-bottom: 0.3rem;
+            margin-top: 0.3rem;
+            box-shadow: 0 0.2rem 0 #9e9e9e;
 
-            p {
-                opacity: 1;
+            span {
+                opacity: 0.2;
             }
         }
     }
@@ -238,11 +251,17 @@ input[type="text"] {
 
 .result-display-speed-container {
     margin-bottom: 8%;
+
+    & .lottery-text.disabled-input {
+        color: #555;
+        opacity: 0.8;
+    }
+
     & input[type="range"] {
         margin-top: 20px;
         -webkit-appearance: none;
         appearance: none;
-        background-color: rgb(0, 143, 255, 0.8);
+        background-color: #008fffcc;
         height: 5px;
         width: 300px;
 
@@ -255,16 +274,24 @@ input[type="text"] {
             -webkit-appearance: none;
             appearance: none;
             cursor: pointer;
-            border: 1px solid rgba(4, 72, 124, 0.5);
+            border: 1px solid #04487c80;
             width: 18px;
             height: 30px;
-            background-color: rgb(0, 143, 255);
+            background-color: #008fff;
             border-radius: 50%;
             -webkit-border-radius: 50%;
         }
 
         &:active::-webkit-slider-thumb {
             box-shadow: 0 0 0 3px rgba(0, 143, 255, 0.6);
+        }
+
+        &.disabled-input {
+            opacity: 0.5;
+
+            &::-webkit-slider-thumb {
+                cursor: not-allowed;
+            }
         }
     }
 }

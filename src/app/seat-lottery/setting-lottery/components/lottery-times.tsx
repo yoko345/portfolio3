@@ -26,7 +26,7 @@ export default function LotteryTimes() {
                     <div className="input-container">
                         <input
                             type="number"
-                            className="input-container__input-num"
+                            className={`input-container__input-num ${boolReadOnly ? "disabled-input" : ""}`}
                             id="count"
                             value={lotteryTimes}
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => dispatch(setLotteryTimes(e.target.value))}

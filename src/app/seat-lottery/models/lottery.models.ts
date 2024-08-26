@@ -11,7 +11,10 @@ export interface NumberForLotteryState {
 }
 
 export interface ButtonClickState {
-    settingIsClick: boolean;
+    settingClickObj: {
+        isClick: boolean;
+        text: string;
+    };
     settingClickFirstTime: boolean;
     resetIsClick: boolean;
     lotteryIsClick: boolean;

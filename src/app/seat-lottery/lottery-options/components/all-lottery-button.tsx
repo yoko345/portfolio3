@@ -13,7 +13,8 @@ export default function AllLotteryButton() {
                 href="#lotteryResultDisplay"
                 className={`all-lottery-button-container__button button-for-lottery  ${allLotteryIsClick ? "clicked" : ""}`}
                 id="AllLotteryButton"
-                onClick={() => dispatch(allLotteryClick())}
+                onMouseDown={() => dispatch(allLotteryClick())}
+                onMouseUp={() => dispatch(allLotteryClick())}
             >
                 一括抽選
             </a>

@@ -6,7 +6,7 @@ import { NumberForLotteryState } from "../../models/lottery.models";
 
 export default function ResetButton() {
     const resetIsClick = useAppSelector((state) => state.clickChecker.resetIsClick);
-    const settingIsClick = useAppSelector((state) => state.clickChecker.settingIsClick);
+    const settingIsClick = useAppSelector((state) => state.clickChecker.settingClickObj.isClick);
     const boolReadOnly = useAppSelector((state) => state.lottery.boolReadOnly);
     const dispatch = useAppDispatch();
 
