@@ -15,7 +15,7 @@ export interface ButtonClickState {
         isClick: boolean;
         text: string;
     };
-    settingClickFirstTime: boolean;
+    settingFirstClick: boolean;
     resetIsClick: boolean;
     lotteryIsClick: boolean;
     lockClickObj: {

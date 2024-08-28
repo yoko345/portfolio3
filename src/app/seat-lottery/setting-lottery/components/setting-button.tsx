@@ -1,7 +1,7 @@
 "use client";
 
 import { useAppSelector, useAppDispatch } from "../../../hooks";
-import { settingClick, switchSettingClickFirstTime } from "../../features/clickCheckerSlice";
+import { settingClick, switchSettingFirstClick } from "../../features/clickCheckerSlice";
 import { setLotteryList, switchReadOnly } from "../../features/lotterySlice";
 import { setAlertTextList } from "../../features/methods/checkSetting";
 import { prepareLottery } from "../../features/methods/prepareLottery";
@@ -9,7 +9,7 @@ import { prepareLottery } from "../../features/methods/prepareLottery";
 export default function SettingButton() {
     const settingIsClick = useAppSelector((state) => state.clickChecker.settingClickObj.isClick);
     const settingButtonText = useAppSelector((state) => state.clickChecker.settingClickObj.text);
-    const settingClickFirstTime = useAppSelector((state) => state.clickChecker.settingClickFirstTime);
+    const settingFirstClick = useAppSelector((state) => state.clickChecker.settingFirstClick);
     const lotteryRangeNumberObj = useAppSelector((state) => state.numberForlottery.lotteryRangeNumberObj);
     const lotteryTimes = useAppSelector((state) => state.numberForlottery.lotteryTimes);
     const removeSeatNumberObj = useAppSelector((state) => state.numberForlottery.removeSeatNumberObj);
@@ -17,7 +17,7 @@ export default function SettingButton() {
     const dispatch = useAppDispatch();
 
     const clickSettingButton = () => {
-        if (settingIsClick && settingClickFirstTime) {
+        if (settingIsClick && settingFirstClick) {
             const alertTextList: string[] = setAlertTextList({ lotteryRangeNumberObj, lotteryTimes, removeSeatNumberObj, removeAttendanceNumberObj });
 
             if (alertTextList.length) {
@@ -25,7 +25,7 @@ export default function SettingButton() {
                     dispatch(settingClick());
                 }
             } else {
-                dispatch(switchSettingClickFirstTime());
+                dispatch(switchSettingFirstClick());
                 const lotteryList = prepareLottery({ lotteryRangeNumberObj, lotteryTimes, removeSeatNumberObj, removeAttendanceNumberObj });
                 dispatch(setLotteryList(lotteryList));
                 dispatch(switchReadOnly());

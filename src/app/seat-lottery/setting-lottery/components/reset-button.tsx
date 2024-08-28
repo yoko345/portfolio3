@@ -1,5 +1,5 @@
 import { useAppSelector, useAppDispatch } from "../../../hooks";
-import { resetClick, settingClick, switchSettingClickFirstTime } from "../../features/clickCheckerSlice";
+import { resetClick, settingClick, switchSettingFirstClick } from "../../features/clickCheckerSlice";
 import { switchReadOnly } from "../../features/lotterySlice";
 import { setLotteryRangeNumber, setLotteryTimes, setRemoveSeatNumberObj, setRemoveAttendanceNumberObj, initialState } from "../../features/numberForLotterySlice";
 import { NumberForLotteryState } from "../../models/lottery.models";
@@ -24,7 +24,7 @@ export default function ResetButton() {
         // 設定ボタンが押されていた場合の初期化
         if (settingIsClick) {
             dispatch(settingClick());
-            dispatch(switchSettingClickFirstTime());
+            dispatch(switchSettingFirstClick());
         }
 
         // inputタグにreadonly属性が付与されていた場合、初期化

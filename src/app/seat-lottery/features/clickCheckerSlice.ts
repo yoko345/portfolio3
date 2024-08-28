@@ -6,7 +6,7 @@ const initialState: ButtonClickState = {
         isClick: false,
         text: "設定",
     },
-    settingClickFirstTime: true,
+    settingFirstClick: true,
     resetIsClick: false,
     lotteryIsClick: false,
     lockClickObj: {
@@ -24,8 +24,8 @@ export const clickCheckerSlice = createSlice({
             state.settingClickObj.isClick = !state.settingClickObj.isClick;
             state.settingClickObj.text = state.settingClickObj.isClick ? "設定中" : "設定";
         },
-        switchSettingClickFirstTime: (state) => {
-            state.settingClickFirstTime = !state.settingClickFirstTime;
+        switchSettingFirstClick: (state) => {
+            state.settingFirstClick = !state.settingFirstClick;
         },
         resetClick: (state) => {
             state.resetIsClick = !state.resetIsClick;
@@ -43,5 +43,5 @@ export const clickCheckerSlice = createSlice({
     },
 });
 
-export const { settingClick, switchSettingClickFirstTime, resetClick, lotteryClick, lockClick, allLotteryClick } = clickCheckerSlice.actions;
+export const { settingClick, switchSettingFirstClick, resetClick, lotteryClick, lockClick, allLotteryClick } = clickCheckerSlice.actions;
 export const clickCheckerReducer = clickCheckerSlice.reducer;
