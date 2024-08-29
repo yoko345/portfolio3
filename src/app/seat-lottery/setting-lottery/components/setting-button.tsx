@@ -1,5 +1,3 @@
-"use client";
-
 import { useAppSelector, useAppDispatch } from "../../../hooks";
 import { settingClick, switchSettingFirstClick } from "../../features/clickCheckerSlice";
 import { setLotteryList, switchReadOnly } from "../../features/lotterySlice";

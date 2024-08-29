@@ -1,5 +1,3 @@
-"use client";
-
 export default function ResultDisplay() {
     return (
         <div className="result-display-container mb-5">

@@ -1,5 +1,3 @@
-"use client";
-
 import { useAppSelector, useAppDispatch } from "../../../hooks";
 import { allLotteryClick } from "../../features/clickCheckerSlice";
 

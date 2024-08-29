@@ -1,5 +1,3 @@
-"use client";
-
 import { Container, Row, Col } from "react-bootstrap";
 import { useAppSelector, useAppDispatch } from "../../../hooks";
 import { setLotteryRangeNumber } from "../../features/numberForLotterySlice";
