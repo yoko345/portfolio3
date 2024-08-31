@@ -19,19 +19,19 @@ export function setAlertTextList({ lotteryRangeNumberObj, lotteryTimes, removeSe
         alertTextList.push("抽選回数は、1以上の数字を入れてください。");
     }
 
-    // 除く数（座席番号）
-    const removeSeatAlert = removeNumberChecker(firstNumber, lastNumber, removeSeatNumberObj, "除く数（座席番号）");
-    if (removeSeatAlert.length) {
-        alertTextList.push(...removeSeatAlert);
-    }
-
     // 除く数（出席番号）
     const removeAttendanceAlert = removeNumberChecker(firstNumber, lastNumber, removeAttendanceNumberObj, "除く数（出席番号）");
     if (removeAttendanceAlert.length) {
         alertTextList.push(...removeAttendanceAlert);
+    }
+
+    // 除く数（座席番号）
+    const removeSeatAlert = removeNumberChecker(firstNumber, lastNumber, removeSeatNumberObj, "除く数（座席番号）");
+    if (removeSeatAlert.length) {
+        alertTextList.push(...removeSeatAlert);
     } else if (removeSeatNumberList.length !== removeAttendanceNumberList.length) {
         // 抽選ができなくなるパターン
-        alertTextList.push("除く数（座席番号）と除く数（出席番号）の個数は同じにしてください。");
+        alertTextList.push("除く数（出席番号）と除く数（座席番号）の個数は同じにしてください。");
     }
 
     if (firstNumber && lastNumber && lotteryTimes) {

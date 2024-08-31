@@ -3,11 +3,13 @@ export interface initialRemoveNumberObjState {
     initialRemoveAttendanceNumberObj: Record<string, number>;
 }
 
-export interface NumberForLotteryState {
+export interface NumberForLotteryResultState {
     lotteryRangeNumberObj: Record<string, number>;
-    lotteryTimes: number;
     removeSeatNumberObj: Record<string, number>;
     removeAttendanceNumberObj: Record<string, number>;
+}
+export interface NumberForLotteryState extends NumberForLotteryResultState {
+    lotteryTimes: number;
 }
 
 export interface ButtonClickState {
@@ -36,4 +38,6 @@ interface lotteryState {
 export interface lotteryListState {
     lotteryList: lotteryState[];
     boolReadOnly: boolean;
+    allowResultDisplay: boolean;
+    lotteryDoneTimes: number;
 }

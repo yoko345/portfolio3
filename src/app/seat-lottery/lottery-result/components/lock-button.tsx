@@ -1,5 +1,6 @@
 import { useAppSelector, useAppDispatch } from "../../../hooks";
 import { lockClick, lotteryClick } from "../../features/clickCheckerSlice";
+import { switchAllowResultDisplay } from "../../features/lotterySlice";
 
 export default function LockButton() {
     const lockIsClick = useAppSelector((state) => state.clickChecker.lockClickObj.isClick);
@@ -7,8 +8,11 @@ export default function LockButton() {
     const dispatch = useAppDispatch();
 
     const clickLockButton = () => {
-        dispatch(lotteryClick());
-        dispatch(lockClick());
+        dispatch(lotteryClick({}));
+        dispatch(lockClick({}));
+
+        // 抽選の結果表示の可否
+        dispatch(switchAllowResultDisplay({}));
     };
 
     return (

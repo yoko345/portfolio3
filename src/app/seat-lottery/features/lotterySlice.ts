@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { lotteryListState } from "../models/lottery.models";
 
-const initialState: lotteryListState = {
+export const initialState: lotteryListState = {
     lotteryList: [],
     boolReadOnly: false,
+    allowResultDisplay: false,
+    lotteryDoneTimes: 0,
 };
 
 export const lotterySlice = createSlice({
@@ -16,8 +18,18 @@ export const lotterySlice = createSlice({
         switchReadOnly: (state) => {
             state.boolReadOnly = !state.boolReadOnly;
         },
+        switchAllowResultDisplay: (state, { payload }) => {
+            state.allowResultDisplay = payload.reset ? false : !state.allowResultDisplay;
+        },
+        lotteryDoneCount: (state, { payload }) => {
+            if (payload.reset) {
+                state.lotteryDoneTimes = 0;
+            } else {
+                state.lotteryDoneTimes += 1;
+            }
+        },
     },
 });
 
-export const { setLotteryList, switchReadOnly } = lotterySlice.actions;
+export const { setLotteryList, switchReadOnly, switchAllowResultDisplay, lotteryDoneCount } = lotterySlice.actions;
 export const lotteryReducer = lotterySlice.reducer;

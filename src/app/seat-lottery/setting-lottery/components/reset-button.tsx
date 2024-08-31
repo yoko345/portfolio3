@@ -1,6 +1,6 @@
 import { useAppSelector, useAppDispatch } from "../../../hooks";
-import { resetClick, settingClick, switchSettingFirstClick } from "../../features/clickCheckerSlice";
-import { switchReadOnly } from "../../features/lotterySlice";
+import { lockClick, lotteryClick, resetClick, settingClick, switchSettingFirstClick } from "../../features/clickCheckerSlice";
+import { lotteryDoneCount, setLotteryList, switchAllowResultDisplay, switchReadOnly } from "../../features/lotterySlice";
 import { setLotteryRangeNumber, setLotteryTimes, setRemoveSeatNumberObj, setRemoveAttendanceNumberObj, initialState } from "../../features/numberForLotterySlice";
 import { NumberForLotteryState } from "../../models/lottery.models";
 
@@ -31,6 +31,13 @@ export default function ResetButton() {
         if (boolReadOnly) {
             dispatch(switchReadOnly());
         }
+
+        // 抽選の結果表示周りの初期化
+        dispatch(lotteryClick({ reset: true }));
+        dispatch(lockClick({ reset: true }));
+        dispatch(setLotteryList([]));
+        dispatch(switchAllowResultDisplay({ reset: true }));
+        dispatch(lotteryDoneCount({ reset: true }));
     };
 
     return (

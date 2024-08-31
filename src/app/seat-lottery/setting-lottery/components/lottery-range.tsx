@@ -11,7 +11,7 @@ export default function LotteryRange() {
     return (
         <Container className="mb-4">
             <Row>
-                <p className="lottery-text">抽選範囲（座席番号）</p>
+                <p className="lottery-text">抽選範囲（出席番号）</p>
             </Row>
             <Row xxl="11">
                 <Col xxl="4">

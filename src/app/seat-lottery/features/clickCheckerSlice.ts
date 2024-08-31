@@ -30,11 +30,11 @@ export const clickCheckerSlice = createSlice({
         resetClick: (state) => {
             state.resetIsClick = !state.resetIsClick;
         },
-        lotteryClick: (state) => {
-            state.lotteryIsClick = !state.lotteryIsClick;
+        lotteryClick: (state, { payload }) => {
+            state.lotteryIsClick = payload.reset ? false : !state.lotteryIsClick;
         },
-        lockClick: (state) => {
-            state.lockClickObj.isClick = !state.lockClickObj.isClick;
+        lockClick: (state, { payload }) => {
+            state.lockClickObj.isClick = payload.reset ? true : !state.lockClickObj.isClick;
             state.lockClickObj.text = state.lockClickObj.isClick ? "ロック解除" : "アンロック";
         },
         allLotteryClick: (state) => {

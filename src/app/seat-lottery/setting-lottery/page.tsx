@@ -17,10 +17,10 @@ export default function SettingLottery() {
                 <LotteryTimes />
             </Row>
             <Row>
-                <RemoveSeatNumber />
+                <RemoveAttendanceNumber />
             </Row>
             <Row>
-                <RemoveAttendanceNumber />
+                <RemoveSeatNumber />
             </Row>
             <Row>
                 <SettingButton />
