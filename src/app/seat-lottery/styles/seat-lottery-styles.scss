@@ -1,3 +1,22 @@
+$bgHeight: 250vh;
+// 背景画像単体の設定
+@mixin background-image-style {
+    background-image: url(/images/bg.png);
+    background-size: 154px 119px;
+    opacity: 0.6;
+}
+// 背景を覆うレイヤー
+@mixin on-background-style {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $bgHeight;
+    background: #e9e9e9;
+    opacity: 0.3;
+}
+// ボタンの非アクティブ状態のスタイル
 @mixin disabled-style {
     background-color: #dcdcdc;
     color: #555;
@@ -14,20 +33,11 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-    background-image: url(/images/bg.png);
-    background-size: 154px 119px;
-    opacity: 0.6;
+    height: $bgHeight;
+    @include background-image-style;
 
     &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: #e9e9e9;
-        opacity: 0.3;
+        @include on-background-style;
     }
 }
 
@@ -148,17 +158,17 @@ input[type="text"] {
 
         &__text {
             position: absolute;
-            top: 8%;
-            left: 6%;
+            top: 10%;
+            left: 13%;
             transform: translate(-50%, -50%);
-            font-size: 1.2em;
+            font-size: 4em;
         }
 
         &__input-text {
             width: 600px;
             height: 350px;
             border-radius: 0.05em;
-            font-size: 15em;
+            font-size: 20em;
         }
     }
 }
@@ -320,6 +330,55 @@ input[type="text"] {
             font-size: 1.5em;
             font-weight: bold;
             color: #fff;
+        }
+    }
+}
+
+// 抽選結果
+.lottery-all-result-container {
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    width: 100%;
+    height: calc($bgHeight - 100vh);
+    border-top: 1px dashed #bbb;
+
+    &__display-box {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+
+        &__result-box {
+            position: relative;
+            height: calc(100vw / 18 * 2);
+            width: calc(100% / 6);
+            margin: 1% 1% 1% 2%;
+            border: 0.01em solid black;
+            border-radius: 3px;
+            background-color: #fff;
+
+            &__seat-number-box {
+                position: absolute;
+                top: 15%;
+                left: 27%;
+                transform: translate(-50%, -50%);
+
+                p {
+                    font-size: 1.4em;
+                    opacity: 0.7;
+                }
+            }
+
+            &__attendance-number-box {
+                position: absolute;
+                top: 60%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                p {
+                    font-size: 9em;
+                }
+            }
         }
     }
 }

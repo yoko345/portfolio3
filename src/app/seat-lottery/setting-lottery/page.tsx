@@ -1,4 +1,4 @@
-import { Container, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 
 import LotteryRange from "./components/lottery-range";
 import LotteryTimes from "./components/lottery-times";
@@ -9,7 +9,7 @@ import SettingButton from "./components/setting-button";
 
 export default function SettingLottery() {
     return (
-        <Container>
+        <>
             <Row>
                 <LotteryRange />
             </Row>
@@ -28,6 +28,6 @@ export default function SettingLottery() {
             <Row>
                 <ResetButton />
             </Row>
-        </Container>
+        </>
     );
 }

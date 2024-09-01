@@ -7,6 +7,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import SettingLottery from "./setting-lottery/page";
 import LotteryResult from "./lottery-result/page";
 import LotteryOptions from "./lottery-options/page";
+import LotteryAllResult from "./lottery-all-result/result-display";
 
 export default function SeatLottery() {
     return (
@@ -17,7 +18,10 @@ export default function SeatLottery() {
                     <Col xxl="3">
                         <SettingLottery />
                     </Col>
-                    <Col xxl="6">
+                    <Col
+                        xxl="6"
+                        className="lottery-result-container"
+                    >
                         <LotteryResult />
                     </Col>
                     <Col xxl="3">
@@ -25,6 +29,7 @@ export default function SeatLottery() {
                     </Col>
                 </Row>
             </Container>
+            <LotteryAllResult />
         </Provider>
     );
 }

@@ -1,7 +1,8 @@
 import { useAppSelector, useAppDispatch } from "../../../hooks";
 import { settingClick, switchSettingFirstClick } from "../../features/clickCheckerSlice";
-import { switchReadOnly } from "../../features/lotterySlice";
+import { setLotteryList, switchReadOnly } from "../../features/lotterySlice";
 import { setAlertTextList } from "../../features/methods/checkSetting";
+import { lotteryResult } from "../../features/methods/lottery";
 
 export default function SettingButton() {
     const settingIsClick = useAppSelector((state) => state.clickChecker.settingClickObj.isClick);
@@ -24,6 +25,9 @@ export default function SettingButton() {
             } else {
                 dispatch(switchSettingFirstClick());
                 dispatch(switchReadOnly());
+
+                const lotteryList = lotteryResult({ lotteryRangeNumberObj, removeAttendanceNumberObj, removeSeatNumberObj });
+                dispatch(setLotteryList(lotteryList));
             }
         }
     };
