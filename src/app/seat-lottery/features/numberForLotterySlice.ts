@@ -16,6 +16,7 @@ export const initialState: NumberForLotteryState = {
     removeSeatNumberObj: initialRemoveNumberObj.initialRemoveSeatNumberObj,
     removeAttendanceNumberObj: initialRemoveNumberObj.initialRemoveAttendanceNumberObj,
 };
+export const initialNumberForLottery = initialState;
 
 export const numberForLotterySlice = createSlice({
     name: "numberForLottery",

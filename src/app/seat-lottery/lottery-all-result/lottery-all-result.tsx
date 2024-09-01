@@ -5,7 +5,10 @@ export default function LotteryAllResult() {
     const lotteryDoneTimes = useAppSelector((state) => state.lottery.lotteryDoneTimes);
 
     return (
-        <div className="lottery-all-result-container">
+        <div
+            id="lotteryResultDisplay"
+            className="lottery-all-result-container"
+        >
             <p className="lottery-text">抽選結果</p>
             <div className="lottery-all-result-container__display-box">
                 {lotteryList.length ? (

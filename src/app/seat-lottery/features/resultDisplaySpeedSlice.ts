@@ -4,6 +4,7 @@ import { ResultDisplaySpeedState } from "../models/lottery.models";
 const initialState: ResultDisplaySpeedState = {
     speed: 800,
 };
+export const initialResultDisplaySpeed = initialState;
 
 export const resultDisplaySpeedSlice = createSlice({
     name: "resultDisplaySpeed",
