@@ -1,12 +1,12 @@
 export interface initialRemoveNumberObjState {
-    initialRemoveSeatNumberObj: Record<string, number>;
     initialRemoveAttendanceNumberObj: Record<string, number>;
+    initialRemoveSeatNumberObj: Record<string, number>;
 }
 
 export interface NumberForLotteryResultState {
     lotteryRangeNumberObj: Record<string, number>;
-    removeSeatNumberObj: Record<string, number>;
     removeAttendanceNumberObj: Record<string, number>;
+    removeSeatNumberObj: Record<string, number>;
 }
 export interface NumberForLotteryState extends NumberForLotteryResultState {
     lotteryTimes: number;

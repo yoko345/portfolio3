@@ -72,3 +72,15 @@ function removeNumberChecker(firstNumber: number, lastNumber: number, numberObj:
 
     return alertTextList;
 }
+
+/**
+ * 除く数に関して、正しく設定されたときは0を非表示にする関数
+ *
+ */
+export function removeNumberValue(removeNumber: number, settingIsClick: boolean) {
+    if (settingIsClick) {
+        return removeNumber || "";
+    } else {
+        return removeNumber;
+    }
+}

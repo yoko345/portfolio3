@@ -2,12 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 import { initialRemoveNumberObjState, NumberForLotteryState } from "../models/lottery.models";
 
 const initialRemoveNumberObj: initialRemoveNumberObjState = {
-    initialRemoveSeatNumberObj: {},
     initialRemoveAttendanceNumberObj: {},
+    initialRemoveSeatNumberObj: {},
 };
 for (let i = 0; i < 5; i++) {
-    initialRemoveNumberObj.initialRemoveSeatNumberObj[`removeSeatNum${i}`] = 0;
     initialRemoveNumberObj.initialRemoveAttendanceNumberObj[`removeAttendanceNum${i}`] = 0;
+    initialRemoveNumberObj.initialRemoveSeatNumberObj[`removeSeatNum${i}`] = 0;
 }
 
 export const initialState: NumberForLotteryState = {

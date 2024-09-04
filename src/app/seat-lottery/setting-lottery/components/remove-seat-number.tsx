@@ -1,8 +1,10 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { useAppSelector, useAppDispatch } from "../../../hooks";
 import { setRemoveSeatNumberObj } from "../../features/numberForLotterySlice";
+import { removeNumberValue } from "../../features/methods/checkSetting";
 
 export default function RemoveSeatNumber() {
+    const settingIsClick = useAppSelector((state) => state.clickChecker.settingClickObj.isClick);
     const removeSeatNumberObj = useAppSelector((state) => state.numberForlottery.removeSeatNumberObj);
     const boolReadOnly = useAppSelector((state) => state.lottery.boolReadOnly);
     const dispatch = useAppDispatch();
@@ -23,7 +25,7 @@ export default function RemoveSeatNumber() {
                             type="number"
                             className={`input-container--remove__remove-number ${boolReadOnly ? "disabled-input" : ""}`}
                             name={removeNumKey}
-                            value={removeSeatNumberObj[removeNumKey]}
+                            value={removeNumberValue(removeSeatNumberObj[removeNumKey], settingIsClick)}
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => dispatch(setRemoveSeatNumberObj({ name: e.target.name, value: e.target.value }))}
                             min="0"
                             readOnly={boolReadOnly}
