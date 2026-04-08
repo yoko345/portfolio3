@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import  "./styles/seat-lottery-styles.scss";
+import "./styles/seat-lottery-styles.scss";
+import StoreProvider from "./StoreProvider";
 
 export const metadata: Metadata = {
     title: "座席表の抽選",
@@ -11,5 +12,9 @@ export default function SeatLotteryLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    return <div id="lotteryContainer">{children}</div>;
+    return (
+        <StoreProvider>
+            <div id="lotteryContainer">{children}</div>
+        </StoreProvider>
+    );
 }

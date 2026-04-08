@@ -1,3 +1,5 @@
+"use client";
+
 import { Container, Row, Col } from "react-bootstrap";
 import { useAppSelector, useAppDispatch } from "../../../hooks";
 import { setRemoveSeatNumberObj } from "../../features/numberForLotterySlice";

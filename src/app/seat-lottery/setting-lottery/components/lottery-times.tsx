@@ -1,3 +1,5 @@
+"use client";
+
 import { Container, Row, Col } from "react-bootstrap";
 import { useAppSelector, useAppDispatch } from "../../../hooks";
 import { setLotteryTimes } from "../../features/numberForLotterySlice";

@@ -1,3 +1,5 @@
+"use client";
+
 import { useAppSelector } from "../../../hooks";
 
 export default function ResultDisplay() {
@@ -15,6 +17,7 @@ export default function ResultDisplay() {
                     id="result"
                     value={allowResultDisplay && lotteryList[lotteryDoneTimes - 1] ? lotteryList[lotteryDoneTimes - 1].attendanceNumber : resultTemporarySave}
                     className="result-display-container__result-display__input-text"
+                    readOnly
                 />
             </div>
         </div>

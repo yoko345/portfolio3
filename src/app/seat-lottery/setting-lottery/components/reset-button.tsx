@@ -1,3 +1,5 @@
+"use client";
+
 import { useAppSelector, useAppDispatch } from "../../../hooks";
 import { allLotteryClick, lockClick, lotteryClick, resetClick, settingClick, switchSettingFirstClick } from "../../features/clickCheckerSlice";
 import { lotteryDoneCount, setLotteryList, switchAllowResultDisplay, switchReadOnly } from "../../features/lotterySlice";

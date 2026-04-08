@@ -1,3 +1,5 @@
+"use client";
+
 import { useAppSelector, useAppDispatch } from "../../../hooks";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { allLotteryClick } from "../../features/clickCheckerSlice";

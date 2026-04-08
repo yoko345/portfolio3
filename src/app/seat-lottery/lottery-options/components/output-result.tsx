@@ -1,3 +1,5 @@
+"use client";
+
 import { useAppSelector } from "@/app/hooks";
 import { downloadCsv } from "../../features/methods/downloadCsv";
 
